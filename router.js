@@ -1,7 +1,5 @@
-module.exports = function(app) {
-    //define route that user can visit.
-    app.get('/', function(req, res, next) {
-        res.send(['waterbottle', 'phone', 'paper']);
-    });
+const Authentication = require('./controllers/authentication');
 
-}
+module.exports = function(app) {
+    app.post('/signup', Authentication.signup);
+};
